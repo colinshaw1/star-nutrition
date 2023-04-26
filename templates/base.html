@@ -1,0 +1,51 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+
+<head>
+    <!-- Required meta tags -->
+    {% block meta %}
+
+    {% endblock %}
+
+
+    {% block extra_meta %}
+    {% endblock %}
+
+    {% block corecss %}
+     
+    {% endblock %}
+
+    {% endblock %}
+
+    <title>New Dawn Fitness</title>
+    {% block corejs %}
+
+    {% block extra_js %}
+    {% endblock %}
+
+    <title>New Dawn Fitness {% block extra_title %}{% endblock %}</title>
+  </head>
+  <body>
+
+
+  </body>
+</html>
+
+
+    {% if messages %}
+    {% endif %}
+
+    {% block page_header %}
+    {% endblock %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% block postloadjs %}
+    {% endblock %}
+
+
+</body>
+</html>
