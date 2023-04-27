@@ -47,7 +47,52 @@
   </body>
 </html>
     <!--header for the top of the bag navbar make sure it sticks to the top of the page-->
-    <header class="container-fluid fixed-top"></header>
+    <header class="container-fluid fixed-top">
+      <div class="row">
+          <!--bootstrap so they stack vertacliyy on all screens and centred-->
+          <div class="col col-10 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
+              <!--links to the homepage url from urls.py-->
+              <a href="{% url 'homepage' %}" class="nav-link main-logo-link">
+                  <h2 class="logo-font text-black my-0"><strong>Star Nutrition</strong></h2>
+              </a>
+          </div>
+          <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+              <!--Get method for searchs using url paramiters-->
+              <form method="GET" action="">
+                  <!--input group for querying using q to be submitted to the action url-->
+                  <div class="input-group w-100">
+                      <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
+                      <!--input group button using a search icon from front awesome-->
+                      <div class="input-group-append">
+                          <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                              <span class="icon">
+                                  <i class="fas fa-search"></i>
+                              </span>
+                          </button>
+                      </div>
+                  </div>
+              </form>
+          </div>
+          <!--column for shopping bag and accoutns links-->
+          <div class="col col-10 col-lg-4 my-auto py-1 py-lg-0">
+              <!--bootstrap list inlines are from bootstarp documention-->
+              <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+                  <li class="list-inline-item dropdown">
+                      <!--Anchor acts as a parent menu for the font awesome icon and accoputn text-->
+                      <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <div class="text-center">
+                              <!--dropdown menu that opens when clicked-->
+                              <div><i class="fas fa-user fa-lg"></i></div>
+                              <p class="my-0">My Account</p>
+                          </div>
+                      </a>
+
+                  </li>
+                  
+              </ul>
+          </div>
+      </div>
+  </header>
 
     {% if messages %}
         <div class="message-container"></div>
