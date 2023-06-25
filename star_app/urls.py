@@ -1,6 +1,10 @@
 from django.contrib import admin
 from django.urls import path
 from django.urls import path, include
+# add imports for static files
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -8,4 +12,5 @@ urlpatterns = [
     # path('accounts', include('allauth.urls')),
     #adding homepage urls to project level file
     path('', include('homepage.urls')),
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+ # using static function to add url to media urls
