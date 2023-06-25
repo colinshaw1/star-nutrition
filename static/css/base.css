@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background: url('/media/run.jpg') no-repeat center center fixed;
+    background: url('/media/running.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100v - 164px);
     color: black;
