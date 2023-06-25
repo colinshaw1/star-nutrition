@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'homepage',
+    'products',
     # adds allauth to installed apps
     'allauth',
     'allauth.account',
