@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- class to cover the projects background imgae and give it a great background -->
+<div class="overlay"></div>
+<div class="container-fluid">
+    <!-- row for products -->
+    <!-- one row needed to be split into 2 columns to display product details -->
+    <div class="row">
+        <!-- col 1 displays product image -->
+        <div class="col-12 col-md-6 col-lg-4 offset-2">
+            <div class="image-container my-5">
+                <!-- taken from products page and slightly updated -->
+                <!-- top of the bootsrap card which contains the image of the product -->
+                <!-- if statment using images url that calls the image url -->
+                {% if product.image %}
+                <a href="{{ product.image.url }}" target="_blank">
+                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                </a>
+                {% else %}
+                <a href="">
+                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                </a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4"></div>
+    </div>
+
+</div>
+{% endblock %}
