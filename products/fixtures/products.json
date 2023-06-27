@@ -206,18 +206,5 @@
             "rating": 4.4,
             "image": "impact.jpg"
         }
-    },
-    {
-        "pk": 17,
-        "model": "products.product",
-        "fields": {
-            "sku": "p000000015",
-            "name": "Snickers Hi Protein Bars 12 x 55g",
-            "description": "Bored of poor tasting protein bars? Tired of disappointing protein shakes? You can now enjoy the World’s Biggest chocolate bar with the delicious combination of caramel, real milk chocolate and nuts all with 20g protein",
-            "price": 25.99,
-            "category": 5,
-            "rating": 4.8,
-            "image": "snickers-hi.jpg"
-        }
     }
 ]
