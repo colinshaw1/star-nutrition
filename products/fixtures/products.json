@@ -96,9 +96,7 @@
         "fields": {
             "sku": "p000000008",
             "name": "Solgar Calcium, Magnesium & Zinc 100 Tablets",
-            "description": "We know calcium keeps our bones and teeth strong and healthy.* But did you know magnesium and zinc are also essential to the maintenance of healthy bones and teeth?*
-
-A healthy diet (with adequate calcium) and regular exercise builds and maintains good bone health. This may reduce the risk of osteoporosis later in life.",
+            "description": "We know calcium keeps our bones and teeth strong and healthy.* But did you know magnesium and zinc are also essential to the maintenance of healthy bones and teeth? A healthy diet (with adequate calcium) and regular exercise builds and maintains good bone health. This may reduce the risk of osteoporosis later in life.",
             "price": 16.99,
             "category": 3,
             "rating": 4.8,
@@ -111,9 +109,7 @@ A healthy diet (with adequate calcium) and regular exercise builds and maintains
         "fields": {
             "sku": "p000000009",
             "name": "Natures Aid Calcium Magnesium & Zinc – 90 tabs",
-            "description": "Natures Aid Calcium, Magnesium & Zinc contains calcium and magnesium which
-contribute to normal muscle function and are needed for the maintenance of
-normal bones and teeth. Zinc contributes to the maintenance of normal bones",
+            "description": "Natures Aid Calcium, Magnesium & Zinc contains calcium and magnesium which contribute to normal muscle function and are needed for the maintenance of normal bones and teeth. Zinc contributes to the maintenance of normal bones",
             "price": 14.10,
             "category": 3,
             "rating": 4.2,
@@ -152,10 +148,7 @@ normal bones and teeth. Zinc contributes to the maintenance of normal bones",
         "fields": {
             "sku": "p000000012",
             "name": "Kinetica Whey Protein Chocolate (300 g)",
-            "description": "22g protein & 5.3g BCAAs per serving*
-*This pack contains 10 servings.
-Product Detail
-22g protein & 5.3g BCAAs per serving* *This pack contains 10 servings.",
+            "description": "22g protein & 5.3g BCAAs per serving. This pack contains 10 servings.Product Detail: 22g protein & 5.3g BCAAs per serving* *This pack contains 10 servings.",
             "price": 19.99,
             "category": 4,
             "rating": 4.1,
@@ -207,11 +200,7 @@ Product Detail
         "fields": {
             "sku": "p000000015",
             "name": "Impact Protein Bar Variety Pack",
-            "description": "Winner of the 'Best Protein Bar' in the European Specialist Sports Nutrition Awards 2022.
-
-Impact Protein Bars are the ultimate high-protein snack — with their triple layers and topped with crunchy crispies — they’re a super-nutritious treat for sweet-tooth snackers everywhere.1
-
-So, discover a world of flavour with Impact Protein Bar Variety Pack — you’re guaranteed to find your favourite. ",
+            "description": "Winner of the 'Best Protein Bar' in the European Specialist Sports Nutrition Awards 2022. Impact Protein Bars are the ultimate high-protein snack — with their triple layers and topped with crunchy crispies — theyre a super-nutritious treat for sweet-tooth snackers everywhere. So, discover a world of flavour with Impact Protein Bar Variety Pack — you’re guaranteed to find your favourite. ",
             "price": 22.99,
             "category": 5,
             "rating": 4.4,

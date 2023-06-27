@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-+^mc1sld#+35r&c2ep++gsnmdur8teu)qtds5=l1r(_t2mrsno
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-colinshaw1-starnutritio-idqu9tneld4.ws-eu100.gitpod.io']
+ALLOWED_HOSTS = ['8000-colinshaw1-starnutritio-lsmsxv6jjce.ws-eu100.gitpod.io']
 
 
 # Application definition
