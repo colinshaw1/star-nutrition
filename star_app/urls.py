@@ -13,6 +13,6 @@ urlpatterns = [
     #adding homepage urls to project level file
     path('', include('homepage.urls')),
     # adding products urls to project level file
-    path('', include('products.urls')),
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
- # using static function to add url to media urls
+    path('products/', include('products.urls')),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+#using static function to add url to media urls

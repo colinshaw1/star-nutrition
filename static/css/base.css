@@ -5,9 +5,9 @@ html {
 body {
     background: url('/media/running.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: calc(100v - 164px);
-    color: black;
-    font-family: sans-serif;
+    height: calc(100vh - 164px);
+    color: #555;
+    font-family: 'Lato';
 }
 
 /* from Bulma like bootsrap to sytle font awesoem icon*/
@@ -38,7 +38,9 @@ body {
     color: white;
 }
 
-
+.shop-now-button:hover,
+.shop-now-button:active,
+.shop-now-button:focus,
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
@@ -52,6 +54,20 @@ body {
 
 .border-black {
     border: 1px solid black !important;
+}
+
+.bg-black {
+    background: #000 !important;
+}
+
+.overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: grey;
+	z-index: -1; /* to make sure the background sits behond the content on the products bag*/
 }
 
 /* -------------------------------- Media Queries */
@@ -76,4 +92,3 @@ body {
     .header-container {
         padding-top: 164px;
     }
-}
