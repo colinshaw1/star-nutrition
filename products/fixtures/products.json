@@ -1,0 +1,234 @@
+[
+    {
+        "pk": 1,
+        "model": "products.product",
+        "fields": {
+            "sku": "p000000001",
+            "name": "Beeline Multivitamins Tablets",
+            "description": "Beeline Multivitamin Tablets contain our most advanced vitamin and mineral formula to provide comprehensive nutritional support. Suitable for vegetarians, the supplement supports health, vitality, wellbeing and energy levels.",
+            "price": 6.80,
+            "category": 1,
+            "rating": 4.4,
+            "image": "multi.jpg"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "products.product",
+        "fields": {
+            "sku": "p000000002",
+            "name": "Haliborange 3-12 Years Multivitamins - 30 Oranage Flavors",
+            "description": "Haliborange Softies Multivitamin Everyday Health are suitable for 3-12 years and have a delicious orange flavour and seven vitamins.",
+            "price": 6.25,
+            "category": 1,
+            "rating": 5,
+            "image": "halib.jpg"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "products.product",
+        "fields": {
+            "sku": "p000000003",
+            "name": "Centrum Advance Multivitamins",
+            "description": "Centrum Advance Multivitamins are designed to help support and maintain a healthy nutritional balanced diet. This supplement contains 25 essential nutrients and vitamins that work together to support your energy, immunity, metabolism and overall health.",
+            "price": 7.25,
+            "category": 1,
+            "rating": 4.5,
+            "image": "centrum.jpg"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "products.product",
+        "fields": {
+            "sku": "p000000004",
+            "name": "Natures Aid",
+            "description": "Multivitamins & Minerals without Iron has been carefully formulated by our expert nutritionists to provide a handy daily top-up of key nutrients, the ideal choice for those who would prefer a multivitamin without iron. Our vegan-friendly, One-A-Day tablets are a unique combination of 21 active ingredients and provide your body with the daily requirement of many essential vitamins and minerals.",
+            "price": 11.99,
+            "category": 1,
+            "rating": 4.2,
+            "image": "multi-vit.jpg"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "products.product",
+        "fields": {
+            "sku": "p000000005",
+            "name": "Holland & Barrett High Strength Super Multi Mineral 90 Tablets",
+            "description": "Holland & Barrett Super MultiMineral tablets feature a unique formulation of major and trace minerals for those individuals who may not receive enough through diet alone. This multimineral formula includes: Calcium - contributes to the maintenance of normal bones and muscle function. Chromium - helps to maintain normal blood glucose levels. Copper - contributes to the normal function of the immune system & normal iron transport in the body. Iodine - contributes to normal thyroid function and the production of thyroid hormones. Iron - contributes to the reduction of tiredness and to normal energy yielding metabolism. Magnesium - contributes to the maintenance of normal bones & teeth, and the reduction of tiredness & fatigue. Manganese - contributes to the protection of cells from oxidative stress, supports bone health & contributes to the normal formation of connective tissue. Selenium - helps with the maintenance of normal hair & nails. Zinc - contributes to the normal function of a healthy immune system, and the maintenance of strong and healthy skin, hair and nails.",
+            "price": 12.99,
+            "category": 2,
+            "rating": 4.0,
+            "image": "super-min.jpg"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "products.product",
+        "fields": {
+            "sku": "p000000006",
+            "name": "BioCare Mineral Complex (30cps)",
+            "description": "Mineral Complex provides a comprehensive combination of essential minerals including magnesium, zinc, selenium & chromium for energy, immune & skin support.",
+            "price": 14.95,
+            "category": 2,
+            "rating": 4.7,
+            "image": "mineral_complex.jpg"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "products.product",
+        "fields": {
+            "sku": "p000000007",
+            "name": "Multivitamins and Minerals - 365 Vegetarian Multivitamin Tablets - 27g",
+            "description": "27 ESSENTIAL VITAMINS AND MINERALS PER TABLET - Each micro multivitamin tablet delivers AtoZ vitamins and minerals - Vitamin A, Vitamin D, Vitamin E, Vitamin K, Vitamin C, Vitamin B Complex including all 8 Vitamin B (Thiamin, Riboflavin, Niacin, Vitamin B6, Folic Acid, Vitamin B12, Biotin, Pantothenic Acid), Calcium, Magnesium, Zinc, Iron, Copper, Iodine, Manganese, Sodium, Potassium, Selenium, Chromium, Molybdenum, Potassium Chloride, Sodium Chloride and Dicalcium Phosphate.ONE A DAY MULTIVITAMINS & MINERALS - Formulated to support both men and women providing 100% of your recommended daily intake of Vitamin D3, Vitamin E, Vitamin B Complex, Copper, Iodine, Selenium and Zinc and more.",
+            "price": 26.99,
+            "category": 2,
+            "rating": 4.6,
+            "image": "weight.jpg"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "products.product",
+        "fields": {
+            "sku": "p000000008",
+            "name": "Solgar Calcium, Magnesium & Zinc 100 Tablets",
+            "description": "We know calcium keeps our bones and teeth strong and healthy.* But did you know magnesium and zinc are also essential to the maintenance of healthy bones and teeth?*
+
+A healthy diet (with adequate calcium) and regular exercise builds and maintains good bone health. This may reduce the risk of osteoporosis later in life.",
+            "price": 16.99,
+            "category": 3,
+            "rating": 4.8,
+            "image": "Solgar.jpg"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "products.product",
+        "fields": {
+            "sku": "p000000009",
+            "name": "Natures Aid Calcium Magnesium & Zinc – 90 tabs",
+            "description": "Natures Aid Calcium, Magnesium & Zinc contains calcium and magnesium which
+contribute to normal muscle function and are needed for the maintenance of
+normal bones and teeth. Zinc contributes to the maintenance of normal bones",
+            "price": 14.10,
+            "category": 3,
+            "rating": 4.2,
+            "image": "nature.jpg"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "products.product",
+        "fields": {
+            "sku": "p000000010",
+            "name": "Optimum Nutrition Gold Standard 100% Whey Powder Double Rich Chocolate 465g",
+            "description": "Huel 100% Nutritionally Complete Meal Vanilla 500ml. Huel (Human + Fuel) is nutritionally complete drink. This means every Huel meal contains a balance of all 26 essential vitamins and minerals, protein, essential fats, carbs, fibre and phytonutrients in a single product.",
+            "price": 33.99,
+            "category": 4,
+            "rating": 4.4,
+            "image": "gold.jpg"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "products.product",
+        "fields": {
+            "sku": "p000000011",
+            "name": "Twix Hi Protein Powder 875g",
+            "description": "What if we could have the INCREDIBLE taste of a Twix Bar...WITHOUT the badness!! Containing nearly 21g protein per scoop and around 5g carbs this Twix Protein Powder is the PERFECT way to settle those choccy bar cravings!!",
+            "price": 25.99,
+            "category": 4,
+            "rating": 4.9,
+            "image": "twix.jpg"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "products.product",
+        "fields": {
+            "sku": "p000000012",
+            "name": "Kinetica Whey Protein Chocolate (300 g)",
+            "description": "22g protein & 5.3g BCAAs per serving*
+*This pack contains 10 servings.
+Product Detail
+22g protein & 5.3g BCAAs per serving* *This pack contains 10 servings.",
+            "price": 19.99,
+            "category": 4,
+            "rating": 4.1,
+            "image": "kinetica.jpg"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "products.product",
+        "fields": {
+            "sku": "p000000013",
+            "name": "Snickers Plant Hi Protein Powder 420g",
+            "description": "You can now enjoy the iconic flavour of Snickers chocolate, caramel & peanuts, blended for the first time ever with pea and brown rice protein. Each serving provides 10g of protein and 114 kcals, with zero soy in an easy-to-mix plant-based protein powder. Suitable for vegans.",
+            "price": 14.90,
+            "category": 4,
+            "rating": 3.9,
+            "image": "snickers.jpg"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "products.product",
+        "fields": {
+            "sku": "p000000014",
+            "name": "Fulfil Chocolate Caramel Protein Bar 55g",
+            "description": "HIGH PROTEIN & LOW SUGAR BARS: Each 55g bar contains 20g of protein and only 192 calories. Great for a tasty treat or a post workout refuel. Our Chocolate Caramel Flavour has a delicious milk chocolate coating, creamy caramel layer and chewy crispy centre.",
+            "price": 3.29,
+            "category": 5,
+            "rating": 4.7,
+            "image": "fulfil-sea.jpg"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "products.product",
+        "fields": {
+            "sku": "p000000015",
+            "name": "Snickers Hi Protein Bars 12 x 55g",
+            "description": "Bored of poor tasting protein bars? Tired of disappointing protein shakes? You can now enjoy the World’s Biggest chocolate bar with the delicious combination of caramel, real milk chocolate and nuts all with 20g protein",
+            "price": 25.99,
+            "category": 5,
+            "rating": 4.8,
+            "image": "snickers-hi.jpg"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "products.product",
+        "fields": {
+            "sku": "p000000015",
+            "name": "Impact Protein Bar Variety Pack",
+            "description": "Winner of the 'Best Protein Bar' in the European Specialist Sports Nutrition Awards 2022.
+
+Impact Protein Bars are the ultimate high-protein snack — with their triple layers and topped with crunchy crispies — they’re a super-nutritious treat for sweet-tooth snackers everywhere.1
+
+So, discover a world of flavour with Impact Protein Bar Variety Pack — you’re guaranteed to find your favourite. ",
+            "price": 22.99,
+            "category": 5,
+            "rating": 4.4,
+            "image": "impact.jpg"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "products.product",
+        "fields": {
+            "sku": "p000000015",
+            "name": "Snickers Hi Protein Bars 12 x 55g",
+            "description": "Bored of poor tasting protein bars? Tired of disappointing protein shakes? You can now enjoy the World’s Biggest chocolate bar with the delicious combination of caramel, real milk chocolate and nuts all with 20g protein",
+            "price": 25.99,
+            "category": 5,
+            "rating": 4.8,
+            "image": "snickers-hi.jpg"
+        }
+    }
+]
