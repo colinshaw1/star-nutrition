@@ -23,7 +23,5 @@ class CategoryAdmin(admin.ModelAdmin):
         'name',
     )
 #registering the models for products and categories
-admin.site.register(Product)
-admin.site.register(Category)
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
