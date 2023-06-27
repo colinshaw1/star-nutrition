@@ -3,6 +3,9 @@ from django.db import models
 # Create your models here.
 #category model to seperate the products into categories
 class Category(models.Model):
+    #add meta class to change the spelling of categorys in admin to categories
+    class Meta:
+        verbose_name_plural = 'Categories'
     #name of the catgory to help make the name more code readable for views etc
     name = models.CharField(max_length=254)
     #friendly name of the category that will show up on the application
