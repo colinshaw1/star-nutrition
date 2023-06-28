@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
-from .models import Product
+from .models import Product, Category
 
 # Create your views here.
 
@@ -12,10 +12,20 @@ def products_view(request):
     products = Product.objects.all()
     #stops an error wehn loading products page without a search term
     query = None
+    #query for returning selected products by categories
+    category = None
 
-    # method taken from course content
     # checking if requests. GET exists
     if request.GET:
+
+        # if statment for selected categories to be returned
+        if 'category' in request.GET:
+            categories = request.GET['category'].split(',')
+            #filter products down to only the categories that are in the list
+            products = products.filter(category__name__in=categories)
+            # filter all categories 
+            categories = Category.objects.filter(name__in=categories)
+
         # if q is in request.GET equal query
         if 'q' in request.GET:
             query = request.GET['q']
@@ -32,6 +42,8 @@ def products_view(request):
         'products': products,
         # query added to context
         'search_term' : query,
+        # category objects
+        'current_categories':categories
     }
     #return on products.html page
     return render(request, 'products/products.html', context)
