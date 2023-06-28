@@ -13,7 +13,7 @@ def products_view(request):
     #stops an error wehn loading products page without a search term
     query = None
     #query for returning selected products by categories
-    category = None
+    categories = None
 
     # checking if requests. GET exists
     if request.GET:
@@ -43,7 +43,7 @@ def products_view(request):
         # query added to context
         'search_term' : query,
         # category objects
-        'current_categories':categories
+        'current_categories':categories,
     }
     #return on products.html page
     return render(request, 'products/products.html', context)
