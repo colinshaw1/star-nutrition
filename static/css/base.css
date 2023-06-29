@@ -70,6 +70,12 @@ body {
 	z-index: -1; /* to make sure the background sits behond the content on the products bag*/
 }
 
+/* styling category badges */
+a.category-badge > span.badge:hover {
+    background: black !important;
+    color: #fff !important;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
