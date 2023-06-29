@@ -30,6 +30,10 @@ def products_view(request):
             if sortkey == 'name':
                 sortkey = 'lower_name'
                 products = products.annotate(lower_name=Lower('name'))
+                 
+            # condtional to see if sort key is equal to category and if is return name            
+            if sortkey == 'category':
+                sortkey = 'category__name'
 
             if 'direction' in request.GET:
                 direction = request.GET['direction']
