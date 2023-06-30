@@ -10,5 +10,37 @@
 {% endblock %}
 
 {% block content %}
-
+<!-- covers background image -->
+    <div class="overlay"></div>
+    <div class="container mb-2">
+        <!-- row to contain shopping bag heading -->
+        <div class="row">
+            <div class="col">
+                <hr>
+                <h2 class="logo-font mb-4">Shopping Bag</h2>
+                <hr>
+            </div>
+        </div>
+        <!-- second row to contain a table showing back contents -->
+        <div class="row">
+            <div class="col">
+                <!-- django logic to render table  -->
+                <!-- if items in shopping bag table will be rendered -->
+                {% if bag_item %}
+                    <div class="table-responsive rounded"></div>
+                {% else %}
+                    <!-- if not render paragtaph to explain bag is empty -->
+                    <p class="lead mb-5">Your bag is empty! Please select a product you would like before checking out</p>
+                    <!-- links user back to the products page -->
+                    <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                        <span class="icon">
+                            <i class="fas fa-chevron-left"></i>
+                        </span>
+                        <span class="text-uppercase">Continue Shopping</span>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    
 {% endblock %}
