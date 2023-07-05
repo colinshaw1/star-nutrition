@@ -27,7 +27,22 @@
                 <!-- django logic to render table  -->
                 <!-- if items in shopping bag table will be rendered -->
                 {% if bag_item %}
-                    <div class="table-responsive rounded"></div>
+                    <div class="table-responsive rounded">
+                        <!-- table to show items in the bag taken from bootstrap docs -->
+                        <table class="table table-sm table-borderless">
+                            <thead class="text-black">
+                                <tr>
+                                    <!-- table headers for rendering products in shopping bag -->
+                                    <th scope="col">Product Description</th>
+                                    <th scope="col"></th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Subtotal</th>
+                                </tr>
+                            </thead>
+
+                        </table>
+                    </div>
                 {% else %}
                     <!-- if not render paragtaph to explain bag is empty -->
                     <p class="lead mb-5">Your bag is empty! Please select a product you would like before checking out</p>
