@@ -40,7 +40,32 @@
                                     <th scope="col">Subtotal</th>
                                 </tr>
                             </thead>
+                            <!-- iteration for each item in the shopping bag and return row for each item -->
+                            {% for item in bag_items %}
+                                <tr>
+                                    <!-- row for product image -->
+                                    <td class="p-3 w-25">
+                                        <img class="img-fluid rounded" src="{{ item.product.image.url }}">
+                                    </td>
+                                    <!-- row for product name -->
+                                    <td class="p-3">
+                                        <p class="my-0"><strong>{{ item.product.name}}</strong></p>
+                                    </td>
+                                    <!-- row for product price -->
+                                    <td class="p-3">
+                                        <p class="my-0">{{ item.product.price}}</p>
+                                    </td>
+                                    <!-- row for product Quantity -->
+                                    <td class="p-3 w-25">
+                                        <p class="my-0">{{ item.quantity}}</p>
+                                    </td>
+                                    <!-- row for prouct price -->
+                                    <td class="p-3">
+                                        <p class="my-0"><strong>{{ item.product.price}}</strong></p>
+                                    </td>
 
+                                </tr>
+                            {% endfor %}
                         </table>
                     </div>
                 {% else %}
