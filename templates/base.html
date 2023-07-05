@@ -101,7 +101,7 @@
                                 <p class="my-0">
                                     <!--Django template logic been used to check if grand total exists and execute and display toatl to 2 decimal paces-->
                                     {% if grand_total %}
-                                    ${{ grand_total|floatformat:2 }}
+                                    €{{ grand_total|floatformat:2 }}
                                     <!--if the grand total template doesnt exist 0 will be displayed-->
                                     {% else %}
                                     €0.00
