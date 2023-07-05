@@ -1,6 +1,6 @@
 from decimal import Decimal
 from django.conf import settings
-from django.shortcuts import get_object_404
+from django.shortcuts import get_object_or_404
 from products.models import Product
 
 # makes all dictioanries avilalble to all templeates on the app
@@ -16,9 +16,9 @@ def bag_contents(request):
     bag = request.session.get('bag',{})
 
     # for loop for each item and quantity in the bag to add to bag
-    for item_id, quantity in bag.items():
+     for item_id, quantity in bag.items():
         # getting the product
-        product = get_object_404(product, pk=item_id)
+        product = get_object_or_404(product, pk=item_id)
         # add price and quantity to total
         total += quantity * product.price
         # increments the product count by the quantity
