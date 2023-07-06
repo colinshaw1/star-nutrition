@@ -71,7 +71,7 @@ def update_bag(request, item_id):
         if quantity > 0:
             bag[item_id] = quantity
         else:
-            bag.pop{item_id}
+            bag.pop[item_id]
     # overwrite the variable if it doesnt exisit
     request.session['bag'] = bag
     # redirect to the bag url
