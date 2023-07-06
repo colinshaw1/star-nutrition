@@ -124,6 +124,7 @@
                         </div>
                         <!-- hidden field for redirct url to go back to last page -->
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        {% endwith %}
                     </div>
                 </form>
             </div>
@@ -131,6 +132,7 @@
     </div>
 </div>
 {% endblock %}
+
 {% block postloadjs %}
 {{ block.super }}
 {% include 'products/includes/plusminus_script.html' %}

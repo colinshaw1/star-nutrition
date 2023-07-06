@@ -16,7 +16,7 @@ def add_to_bag(request, item_id):
     size = None
     #if statement for product size in request . post it gets set to that
     if 'product_size' in request.POST:
-        size = request.POST['size']
+        size = request.POST['product_size']
     # stores shopping bag in the sessions so it is not lost till the session is closed
     bag = request.session.get('bag', {})
 

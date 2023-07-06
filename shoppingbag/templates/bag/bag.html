@@ -44,21 +44,21 @@
                     {% for item in bag_items %}
                     <tr>
                         <!-- row for product image -->
-                        <td class="p-3 w-25">
+                        <td class="py-3 w-25">
                             <img class="img-fluid rounded" src="{{ item.product.image.url }}">
                         </td>
                         <!-- row for product name -->
-                        <td class="p-3">
+                        <td class="py-3">
                             <p class="my-0"><strong>{{ item.product.name}}</strong></p>
                             <!-- size label  -->
                             <p class="my-0"><strong>Size: </strong>{% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
                         </td>
                         <!-- row for product price -->
-                        <td class="p-3">
+                        <td class="py-3">
                             <p class="my-0">{{ item.product.price}}</p>
                         </td>
                         <!-- row for product Quantity -->
-                        <td class="p-3 w-25">
+                        <td class="py-3 w-25">
                             <!-- Allows updating quanity from the shopping bag -->
                             <form class="form update-form" action="POST" action="{% url 'update_bag' item.item_id %}">
                                 {% csrf_token %}
@@ -89,6 +89,10 @@
                                                 </span>
                                             </button>
                                         </div>
+                                        <!-- size to be submitted if product has size -->
+                                        {% if item.product.has_sizes %}
+                                            <input type="hidden" name="product_size" value="{{ item.size }}">
+                                        {% endif %}
                                     </div>
                                 </div>
                             </form>
