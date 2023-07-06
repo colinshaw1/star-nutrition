@@ -9,6 +9,8 @@ def view_bag(request):
 # add in add to bag view
 def add_to_bag(request, item_id):
     """Add quanity of a product to the shopping bag"""
+    # add toast messages 
+    product = Product.objects.get(pk=item_id)
     # get quanity and convert it to an integar as it is a string
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
@@ -38,6 +40,8 @@ def add_to_bag(request, item_id):
             bag[item_id] += quantity
         else:
             bag[item_id] = quantity
+            # add string method for toast message
+            messages.success(request, f' You have added {product.name} to your shopping bag')
 
     # overwrite the variable if it doesnt exisit
     request.session['bag'] = bag
@@ -73,7 +77,7 @@ def adjust_bag(request, item_id):
         if quantity > 0:
             bag[item_id] = quantity
         else:
-            bag.pop[item_id]
+            bag.pop(item_id)
     # overwrite the variable if it doesnt exisit
     request.session['bag'] = bag
     # redirect to the bag url
@@ -96,7 +100,7 @@ def remove_item(request, item_id):
         if size:
             # del if quantity is 0
             del bag[item_id]['items_by_size'][size]
-            if not bag[item_id]['item_by_size']:
+            if not bag[item_id]['items_by_size']:
                 bag.pop(item_id)
         #else if item has no size run orginal         
         else:        
