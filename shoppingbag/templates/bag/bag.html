@@ -60,7 +60,7 @@
                         <!-- row for product Quantity -->
                         <td class="py-3 w-25">
                             <!-- Allows updating quanity from the shopping bag -->
-                            <form class="form update-form" action="POST" action="{% url 'update_bag' item.item_id %}">
+                            <form class="form update-form" action="POST" action="{% url 'adjust_bag' item.item_id %}">
                                 {% csrf_token %}
                                 <!-- form group form the product details page -->
                                 <div class="form-group">
