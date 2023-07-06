@@ -70,6 +70,7 @@
                                 <div class="input-group">
                                     <!-- add - button for taking away from item quantity -->
                                     <div class="input-groug-prepend">
+                                        <!-- buttons for javascript -->
                                         <button class="decrement-qty btn btn-black rounded-0"
                                             data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
                                             <span class="icon">
@@ -81,6 +82,7 @@
                                         min="1" max="99" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
                                     <!-- add button for + button for adding to the product quanity -->
                                     <div class="input-groug-prepend">
+                                        <!-- buttons for javascript -->
                                         <button class="increment-qty btn btn-black rounded-0"
                                             data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
                                             <span class="icon">
@@ -93,7 +95,7 @@
                         </div>
                         <!-- column two handles the submit form for adding products to the bag -->
                         <div class="col-12">
-                            <!-- button to continue shopping and link back to the products page if clicked-->
+                            <!-- button to contoinue shopping and link back to the products page if clicked-->
                             <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-5">
                                 <span class="icon">
                                     <i class="fas fa-chevron-left"></i>
@@ -111,4 +113,8 @@
         </div>
     </div>
 </div>
+{% endblock %}
+{% block postloadjs %}
+{{ block.super }}
+{% include 'products/includes/plusminus_script.html' %}
 {% endblock %}
