@@ -59,29 +59,30 @@
                         <td class="p-3 w-25">
                             <!-- Allows updating quanity from the shopping bag -->
                             <form class="form update-form" action="POST" action="">
-                                {% csrf_token %}
+                                {% csrf_toekn %}
                                 <!-- form group form the product details page -->
                                 <div class="form-group">
                                     <div class="input-group">
                                         <!-- add - button for taking away from item quantity -->
                                         <div class="input-groug-prepend">
                                             <!-- buttons for javascript -->
-                                            <button class="decrement-qty btn btn-black rounded-0"
-                                                data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
-                                                <span class="icon">
+                                            <!-- updating product variables to item id form product.id -->
+                                            <button class="decrement-qty btn btn-sm btn-black rounded-0"
+                                                data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
+                                                <span>
                                                     <i class="fas fa-minus fa-sm"></i>
                                                 </span>
                                             </button>
                                         </div>
-                                        <input class="form-control qty_input" type="number" name="quantity" value="1"
-                                            min="1" max="99" data-item_id="{{ product.id }}"
-                                            id="id_qty_{{ product.id }}">
+                                        <input class="form-control form-control-sm qty_input" type="number" name="quantity" value="{% item.quantity %]"
+                                            min="1" max="99" data-item_id="{{ item.item_id }}"
+                                            id="id_qty_{{ item.item_id }}">
                                         <!-- add button for + button for adding to the product quanity -->
                                         <div class="input-groug-prepend">
                                             <!-- buttons for javascript -->
-                                            <button class="increment-qty btn btn-black rounded-0"
-                                                data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
-                                                <span class="icon">
+                                            <button class="increment-qty btn btn-sm btn-black rounded-0"
+                                                data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
+                                                <span>
                                                     <i class="fas fa-plus fa-sm"></i>
                                                 </span>
                                             </button>
