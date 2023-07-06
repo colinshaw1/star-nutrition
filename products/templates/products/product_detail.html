@@ -63,6 +63,22 @@
                     {% csrf_token %}
                     <!-- form with one row split into two columns -->
                     <div class="form-row">
+                        <!-- add sizes selector box to product detials template -->
+                        {% with product.has_sizes as s %}
+                        {% if s %}
+                        <div class="col-12">
+                            <!-- form for selecting size -->
+                            <p><strong>Size:</strong></p>
+                            <select class="form-control rounded-0 w-50" name="product_size" id='id_product_size'>
+                                <option value="xs">XS</option>
+                                <option value="s">S</option>
+                                <!-- Medium will be the defualt selection -->
+                                <option value="m" selected>M</option>
+                                <option value="l">L</option>
+                                <option value="xl">XL</option>
+                            </select>
+                        </div>
+                        {% endif %}
                         <!-- column one takes the input for thee quanity of items they want to purchase -->
                         <div class="col-12">
                             <p class="mt-3"><strong>Quantity:</strong></p>
