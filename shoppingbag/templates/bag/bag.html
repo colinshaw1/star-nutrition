@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load bag_tool %}
 
 {% block page_header %}
 <div class="container header-container">
@@ -57,7 +58,8 @@
                         </td>
                         <!-- row for product price -->
                         <td class="py-3">
-                            <p class="my-0">{{ item.product.price}}</p>
+                           <!-- loads the price argument as the first argument for register filter and quantity as the second -->
+                           <p class="my-0">{{ item.product.price | calc_subtotal:item.quantity }}</p>
                         </td>
                         <!-- row for product Quantity -->
                         <td class="py-3 w-25">
