@@ -150,3 +150,8 @@
 </div>
 
 {% endblock %}
+{% block postloadjs %}
+{{ block.super }}
+{% include 'products/includes/pluesminus_script.html' %}
+
+{% endblock %}
