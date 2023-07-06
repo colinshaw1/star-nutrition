@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 
 # Create your views here.
 
@@ -25,3 +25,22 @@ def add_to_bag(request, item_id):
     # overwrite the variable if it doesnt exisit
     request.session['bag'] = bag
     return redirect(redirect_url)
+
+# view update product quantity in the shopping bag
+def update_bag(request, item_id):
+    """Update the quantity of the items in the shopping bag"""
+    # get quanity and convert it to an integar as it is a string
+    quantity = int(request.POST.get('quantity'))
+    # stores shopping bag in the sessions so it is not lost till the session is closed
+    bag = request.session.get('bag', {})
+
+    # update the bag quanity if already in bag
+    if quantity > 0:
+        bag[item_id] = quantity
+    else:
+        del bag[item_id]
+    
+    # overwrite the variable if it doesnt exisit
+    request.session['bag'] = bag
+    # redirect bag ot view bag url using the reverse
+    return redirect(reverse('view_bag'))
