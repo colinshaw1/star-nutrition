@@ -110,7 +110,8 @@
                             </div>
                         </div>
                         <!-- column two handles the submit form for adding products to the bag -->
-                        <div class="col-12">
+                        <!-- add full width and margin if product has margins -->
+                        <div class="col{% if s %}-12 {% endif %}">
                             <!-- button to contoinue shopping and link back to the products page if clicked-->
                             <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-5">
                                 <span class="icon">
