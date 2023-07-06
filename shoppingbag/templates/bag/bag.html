@@ -59,7 +59,7 @@
                         <td class="p-3 w-25">
                             <!-- Allows updating quanity from the shopping bag -->
                             <form class="form update-form" action="POST" action="">
-                                {% csrf_toekn %}
+                                {% csrf_token %}
                                 <!-- form group form the product details page -->
                                 <div class="form-group">
                                     <div class="input-group">
@@ -90,6 +90,11 @@
                                     </div>
                                 </div>
                             </form>
+                            <!-- update items in the bag -->
+                            <a class="update-link text-info">Update</a>
+                            <!-- remove items from the bag -->
+                            <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}">Remove</a>
+
                         </td>
                         <!-- row for prouct price -->
                         <td class="p-3">
@@ -152,6 +157,28 @@
 {% endblock %}
 {% block postloadjs %}
 {{ block.super }}
-{% include 'products/includes/pluesminus_script.html' %}
+{% include 'products/includes/plusminus_script.html' %}
 
+
+<script type="text/javascript">
+    // Update quantity on click
+    $('.update-link').click(function(e) {
+        var form = $(this).prev('.update-form');
+        form.submit();
+    })
+
+    // Remove item and reload on click
+    $('.remove-item').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var size = $(this).data('size');
+        var url = `/bag/remove/${itemId}`;
+        var data = {'csrfmiddlewaretoken': csrfToken, 'size': size};
+
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
+    })
+</script>
 {% endblock %}
