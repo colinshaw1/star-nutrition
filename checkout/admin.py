@@ -2,6 +2,11 @@ from django.contrib import admin
 from .models import Order, OrderLineItem
 # Register your models here.
 
+# allows admin users to add and edit line items in admin
+class OrderLineItemAdminInline(admin.TabularInline):
+    model = OrderLineItem
+    readonly_fields = ('lineitem_total',)
+
 # class for order admin to generate administrion side
 class OrderAdmin(admin.ModelAdmin):
     inlines = (OrderLineItemAdminInline,)
@@ -16,3 +21,5 @@ class OrderAdmin(admin.ModelAdmin):
     
     # making sure orders will be ordered by date
     ordering = ('-date',)
+
+admin.site.register(Order, OrderAdmin)
