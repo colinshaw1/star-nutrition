@@ -78,7 +78,7 @@ def adjust_bag(request, item_id):
             # if there is a size it gets updated from the dictionary
             bag[item_id]['items_by_size'][size] = quantity
             # add string method for toast message
-            messages.success(request, f' You have updated size {size.upper()} {product.name} to your {bag[item_id]['items_by_size'][size]}!')
+            messages.success(request, f' You have updated size {size.upper()} {product.name} to your {bag[item_id]["items_by_size"][size]}!')
         else:
             # del if quantity is 0
             del bag[item_id]['items_by_size'][size]
