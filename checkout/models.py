@@ -58,7 +58,10 @@ class Order(models.Model):
             self.order_number = self._generate_order_number()
         super().save(*args, **kwargs)
 
-
+    
+    # string to return order number
+    def __str__(self):
+        return self.order_number
 
 # class for indivdual line items, will relate shopping bag items to orders number
 class OrderLineItem(models.Model):
@@ -70,9 +73,13 @@ class OrderLineItem(models.Model):
 
     def save(self, *args, **kwargs):
         """
-        Override the original save method to lineitem total
+        Override the original save method to set lineitem total
         and update order.
         """                
         # multiplies the product by the price for each line item
         self.lineitem_total = self.product.price * self.quanity
         super().save(*args, **kwargs)
+
+    # string to return sku and order number for each line item
+    def __str__(self):
+        return f'SKU: {self.product.sku} on order {self.order.order_number}'
