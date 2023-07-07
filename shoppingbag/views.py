@@ -12,7 +12,7 @@ def view_bag(request):
 def add_to_bag(request, item_id):
     """Add quanity of a product to the shopping bag"""
     # add toast messages so strings will work
-    product = get_object_404(Product, pk=item_id)
+    product = get_object_or_404(Product, pk=item_id)
     # get quanity and convert it to an integar as it is a string
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
@@ -61,7 +61,7 @@ def add_to_bag(request, item_id):
 def adjust_bag(request, item_id):
     """ update quantity of a product to the shopping bag"""
     # add toast messages so strings will work
-    product = get_object_404(Product, pk=item_id)
+    product = get_object_or_404(Product, pk=item_id)
     # get quanity and convert it to an integar as it is a string
     quantity = int(request.POST.get('quantity'))
     # set size to none
@@ -106,6 +106,8 @@ def adjust_bag(request, item_id):
 # view remove product quantity in the shopping bag
 def remove_item(request, item_id):
     """ remove quantity of a product to the shopping bag"""
+    # add toast messages so strings will work
+    product = get_object_or_404(Product, pk=item_id)
     # add try block to return 200 error if code does not execure
     try:
         # set size to none, no need for quantity as it set to zero
@@ -122,13 +124,19 @@ def remove_item(request, item_id):
             del bag[item_id]['items_by_size'][size]
             if not bag[item_id]['items_by_size']:
                 bag.pop(item_id)
+                # add string method for toast message
+                messages.success(request, f' You have removed size {size.upper()} {product.name} from your shopping bag!')
         #else if item has no size run orginal         
         else:        
             # if no size and pop it out of the bag
                 bag.pop(item_id)
+                # add string method for toast message
+                messages.success(request, f' You have removed {product.name} from your shopping bag!')
         # overwrite the variable if it doesnt exisit
         request.session['bag'] = bag
         return HttpResponse(status=200)
     #catch status 500 error. e will return error to template if anythign goes wrong 
     except Exception as e:
+        # error message
+        messages.error(request, f'There has been an error removing this itme {e}')
         return HttpResponse(status=500)
