@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'homepage',
     'products',
     'shoppingbag',
+    'checkout',
     # adds allauth to installed apps
     'allauth',
     'allauth.account',
