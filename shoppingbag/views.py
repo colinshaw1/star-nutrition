@@ -29,19 +29,27 @@ def add_to_bag(request, item_id):
             # check two items of same id and size exist and set it equal to quantity
             if size in bag[item_id]['items_by_size'].keys():
                 bag[item_id]['items_by_size'][size] += quantity
+                # add string method for toast message
+                messages.success(request, f' You have added size {size.upper()} product.name} to your {bag[item_id]}!')
             else:
                 bag[item_id]['items_by_size'][size] = quantity
+                # add string method for toast message
+                messages.success(request, f' You have added size {size.upper()} {product.name} to your shopping bag!')
         else:
             bag[item_id] = {'items_by_size': {size: quantity}}
+            # add string method for toast message
+            messages.success(request, f' You have added size {size.upper()} {product.name} to your shopping bag!')
     #else if item has no size run orginal         
     else:        
         # add item to bag or update the bag quanity if already in bag
         if item_id in list(bag.keys()):
             bag[item_id] += quantity
+            # add string method for toast message
+            messages.success(request, f' You have added {product.name} quantity to your {bag[item_id]}!')
         else:
             bag[item_id] = quantity
             # add string method for toast message
-            messages.success(request, f' You have added {product.name} to your shopping bag')
+            messages.success(request, f' You have added {product.name} to your shopping bag!')
 
     # overwrite the variable if it doesnt exisit
     request.session['bag'] = bag
