@@ -32,8 +32,7 @@ def add_to_bag(request, item_id):
             if size in bag[item_id]['items_by_size'].keys():
                 bag[item_id]['items_by_size'][size] += quantity
                 # add string method for toast message
-                messages.success(request, f' You have added size {size.upper()} product.name} to your {bag[item_id]['items_by_size'][size]}!')
-            else:
+                messages.success(request, f"You have added size {size.upper()} {product.name} to your {bag[item_id]['items_by_size'][size]}!")
                 bag[item_id]['items_by_size'][size] = quantity
                 # add string method for toast message
                 messages.success(request, f' You have added size {size.upper()} {product.name} to your shopping bag!')
