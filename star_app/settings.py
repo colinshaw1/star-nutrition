@@ -48,6 +48,9 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+
+    # other apps
+    'crispy-forms'
 ]
 
 MIDDLEWARE = [
@@ -61,6 +64,9 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'star_app.urls'
+
+#telling dajngo which template will use crispy forms
+CRISPY_TEMPLATE_PACK = 'bootsrap4'
 
 TEMPLATES = [
     {
@@ -79,6 +85,11 @@ TEMPLATES = [
                  # adding shopping bag context process, so bag contents will be aviable in alll tmeplates
                 'shoppingbag.contexts.bag_contents'
             ],
+            # tells django what templates to use for crispy forms 
+            'bultins': [
+                'crisp_forms.templatetags.crispy_forms_tags',
+                'crisp_forms.templatetags.crispy_forms_fields',
+            ]
         },
     },
 ]
