@@ -22,14 +22,15 @@
     <div class="row">
         <div class="col">
             <hr>
-            <h2 class="logo-font mb-4">Shopping Bag</h2>
+            <h2 class="logo-font mb-4">Checkout</h2>
             <hr>
         </div>
     </div>
     <!-- second row to contain a table showing bag contents -->
     <div class="row">
-        <!-- class for checkout to show up on the righ of larger screens -->
+        <!-- class for checkout to show up on the right of larger screens -->
         <div class="col-12 col-lg-6 order-lg-last mb-5">
+            <p class="text-muted">Order Summary ({{ product_count }})</p>
             <div class="row">
                 <div class="col-7 offset-2">
                     <p class="mb-1 mt-0 small text-muted">Item</p>
@@ -44,7 +45,7 @@
         {% for item in bag_items %}
         <div class="row">
             <div class="col-2 mb-1">
-                <!-- display item image -->
+                <!-- display iem image -->
                 <a href="{% url 'product_detail' item.product.id %}">
                     {% if item.product.image %}
                     <img class="w-100" src="{{ item.product.image.url }}" alt="{{ product.name }}">
@@ -87,14 +88,14 @@
         <form action="{% url 'checkout' %}" method="POST" id="payment-form">
             {% crsf_token %}
             <!-- three field sets rendered for UI -->
-            fieldset for
+            <!-- fieldset for name and email -->
             <fieldset class="rounded px-3 mb-5">
                 <legend class="fieldset-label small text-black px-2 w-auto">Details</legend>
                 <!-- using the cripsy form fields template for the users name and email-->
                 {{ order_form.full_name | as_crispy_field }}
                 {{ order_form.email | as_crispy_field }}
             </fieldset>
-            fieldset two to
+            <!-- fieldset two  -->
             <fieldset class="rounded px-3 mb-5">
                 <legend class="fieldset-label small text-black px-2 w-auto">Delivery</legend>
                 <!-- using the cripsy form filed to display user delivery info -->
