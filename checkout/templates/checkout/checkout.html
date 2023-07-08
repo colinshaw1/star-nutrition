@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 {% load bag_tool %}
+<!-- adding css box for the template of the app -->
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
 
 {% block page_header %}
 <div class="container header-container">
