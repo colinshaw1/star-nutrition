@@ -15,7 +15,6 @@ def bag_contents(request):
     bag = request.session.get('bag', {})
 
     # for loop for each item and quanity in the bag to add to bag
-    # from course content
     # add item_data to use all data not just quantity
     for item_id, item_data in bag.items():
         # if statment for code to be executed if it only has sizes.
