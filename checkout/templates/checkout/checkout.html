@@ -3,7 +3,7 @@
 {% load bag_tool %}
 <!-- adding css box for the template of the app -->
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
 
 {% block page_header %}
@@ -31,38 +31,47 @@
         <div class="col-12 col-lg-6">
             <!-- instructions for users to fill oout forms -->
             <p class="text-muted">Please fill out the form below to complete your order</p>
+            <!-- calling the checkout url for the POST method -->
+            <form action="{% url 'checkout' %}" method="POST" id="payment-form"></form>
+            {% crsf_token %}
+            <!-- three field sets rendered for UI -->
+            fieldset for
+            <fieldset class="rounded px-3 mb-5">
+                <legend class="fieldset-label small text-black px-2 w-auto">Details</legend>
+                <!-- using the cripsy form fields template for the users name and email-->
+                {{ order_form.full_name | as_crispy_field }}
+                {{ order_form.email | as_crispy_field }}
+            </fieldset>
+            fieldset two to
+            <fieldset class="rounded px-3 mb-5">
+                <legend class="fieldset-label small text-black px-2 w-auto">Delivery</legend>
+                <!-- using the cripsy form filed to display user delivery info -->
+                {{ order_form.phone_number | as_crispy_field }}
+                {{ order_form.country | as_crispy_field }}
+                {{ order_form.postcode | as_crispy_field }}
+                {{ order_form.town_or_city | as_crispy_field }}
+                {{ order_form.street_address1 | as_crispy_field }}
+                {{ order_form.street_address2 | as_crispy_field }}
+                {{ order_form.county | as_crispy_field }}
+                <!-- check box for user to save info to there profile -->
+                <div class="form-check form-check-inline float-right mr-0">
+                    {% if user.is_authenticated %}
+                    <label class="form-check-label" for="id-save-info">Save this delivery information to my
+                        profile</label>
+                    <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info"
+                        checked>
+                    {% else %}
+                    <!-- if the user doesnt have an account a link to sign is provided -->
+                    <label class="form-check-label" for="id-save-info">
+                        <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or
+                        <a class="text-info" href="{% url 'account_login' %}">login</a> to save this information
+                    </label>
+                    {% endif %}
+                </div>
+            </fieldset>
+            <fieldset class="px-3"></fieldset>
         </div>
     </div>
 </div>
 
 {% endblock %}
-{% block postloadjs %}
-{{ block.super }}
-{% include 'products/includes/quantity_script.html' %}
-
-<!-- javascript add from course content for remove and add buttons -->
-<script type="text/javascript">
-    // Update quantity on click
-    $('.update-link').click(function (e) {
-        var form = $(this).prev('.update-form');
-        form.submit();
-    })
-
-    // Remove item and reload on click
-    $('.remove-item').click(function (e) {
-        var csrfToken = "{{ csrf_token }}";
-        var itemId = $(this).attr('id').split('remove_')[1];
-        var size = $(this).data('product_size');
-        var url = `/shoppingbag/remove/${itemId}/`;
-        var data = {
-            'csrfmiddlewaretoken': csrfToken,
-            'product_size': size
-        };
-
-        $.post(url, data)
-            .done(function () {
-                location.reload();
-            });
-    })
-</script>
-{% endblock %} 
