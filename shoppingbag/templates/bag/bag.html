@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% load static %}
-{% load bag_tool %}
 
 {% block page_header %}
 <div class="container header-container">
@@ -28,6 +27,7 @@
             <!-- django logic to render table  -->
             <!-- if items in shopping bag table will be rendered -->
             {% if bag_items %}
+
             <div class="table-responsive rounded">
                 <!-- table to show items in the bag taken from bootstrap docs -->
                 <table class="table table-sm table-borderless">
@@ -51,15 +51,14 @@
                         <!-- row for product name -->
                         <td class="py-3">
                             <p class="my-0"><strong>{{ item.product.name}}</strong></p>
-                            <!-- size label  -->
                             <p class="my-0"><strong>Size:
                                 </strong>{% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}
                             </p>
                         </td>
                         <!-- row for product price -->
                         <td class="py-3">
-                           <!-- loads the price argument as the first argument for register filter and quantity as the second -->
-                           <p class="my-0">{{ item.product.price | calc_subtotal:item.quantity }}</p>
+                            <!-- loads the price argument as the first argument for register filter and quantity as the second -->
+                            <p class="my-0">{{ item.product.price }}</p>
                         </td>
                         <!-- row for product Quantity -->
                         <td class="py-3 w-25">
@@ -96,23 +95,25 @@
                                         <!-- size to be submitted if product has size -->
                                         {% if item.product.has_sizes %}
                                         <input type="hidden" name="product_size" value="{{ item.size }}">
-                                    {% endif %}
+                                        {% endif %}
                                     </div>
                                 </div>
                             </form>
                             <!-- update items in the bag -->
                             <a class="update-link text-info">Update</a>
                             <!-- remove items from the bag -->
-                            <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"
-                                data-product_size="{{ item.size }}"><small>Remove</small></a>
+                            <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}">
+                                <small>Remove</small></a>
+                            
                         </td>
                         <!-- row for prouct price -->
-                        <td class="p-3">
-                            <p class="my-0"><strong>{{ item.product.price}}</strong></p>
+                        <td class="py-3">
+                            <p class="my-0">${{ item.product.price | calc_subtotal:item.quantity }}</p>
                         </td>
                     </tr>
                     {% endfor %}
                     <tr>
+                        <!-- content taking from project walkthrough in course content -->
                         <td colspan="5" class="pt-5 text-right">
                             <!-- return bag total -->
                             <h6><strong>Bag Total: €{{ total|floatformat:2 }}</strong></h6>
@@ -138,7 +139,7 @@
                                 <span class="text-uppercase">Continue Shopping</span>
                             </a>
                             <!-- button to procced to checkout -->
-                            <a href="" class="btn btn-black rounded-0 btn-lg">
+                            <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
                                 <span class="text-uppercase">Secure Checkout</span>
                                 <span class="icon">
                                     <i class="fas fa-lock"></i>
@@ -167,9 +168,8 @@
 {% endblock %}
 {% block postloadjs %}
 {{ block.super }}
-{% include 'products/includes/plusminus_script.html' %}
 
-
+<!-- javascript add from course content for remove and add buttons -->
 <script type="text/javascript">
     // Update quantity on click
     $('.update-link').click(function (e) {
