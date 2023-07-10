@@ -4,34 +4,34 @@ from .models import Order
 # class for the order form
 class OrderForm(forms.ModelForm):
     class Meta:
-        # tells danjo which model is assoicated ot the form
+        # tells Django which model is associated with the form
         model = Order
         fields = ('full_name', 'email', 'phone_number',
                   'street_address1', 'street_address2',
                   'town_or_city', 'postcode', 'country',
                   'county',)
 
-        # init method
-        def __init__(self, *args, **kwargs):
-            """
-            Add placeholders and classes, remove auto-generated
-            labels and set autofocus on first field
-            """
-            # dictionary of place holders so no empty boxes
-            super().__init__(*args, **kwargs)
-            placeholders = {
-                'full_name': 'Full Name',
-                'email': 'Email Address',
-                'phone_number': 'Phone Number',
-                'country': 'Country',
-                'postcode': 'Postal Code',
-                'town_or_city': 'Town or City',
-                'street_address1': 'Street Address 1',
-                'street_address2': 'Street Address 2',
-                'county': 'County',
-            }
+    # init method
+    def __init__(self, *args, **kwargs):
+        """
+        Add placeholders and classes, remove auto-generated
+        labels, and set autofocus on the first field
+        """
+        # dictionary of placeholders so no empty boxes
+        super().__init__(*args, **kwargs)
+        placeholders = {
+            'full_name': 'Full Name',
+            'email': 'Email Address',
+            'phone_number': 'Phone Number',
+            'country': 'Country',
+            'postcode': 'Postal Code',
+            'town_or_city': 'Town or City',
+            'street_address1': 'Street Address 1',
+            'street_address2': 'Street Address 2',
+            'county': 'County',
+        }
 
-        # add stars to to fields that are essential
+        # add stars to fields that are essential
         self.fields['full_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if self.fields[field].required:
