@@ -157,3 +157,12 @@
     </div>
 </div>
 {% endblock %}
+<!-- javascript to render stripe -->
+{% block postloadjs %}
+    {{ block.super }}
+    <!-- template filter json_script to render the public key -->
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
+    <!-- link to js file for the template -->
+    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+{% endblock %}
