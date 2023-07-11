@@ -1,6 +1,10 @@
 from django.shortcuts import render, reverse, redirect
 from django.contrib import messages
 from .forms  import OrderForm
+from bag.context import bag_contents
+from django.conf import settings
+
+import stripe
 
 # Create your views here.
 # checkout view
@@ -11,6 +15,13 @@ def checkout(request):
     if not bag:
         messages.error(request, "Your bag is currently empty")
         return redirect(reverse('products'))
+
+    # create new variable for stripe payments so the old one is not overridden
+    current_bag = bag_contents(request)
+    # getting the total key from the current bag
+    total = current_bag['grand_total']
+    # round the total for stripe
+    stripe_total = round(total * 100)
 
     # creating the order form instance
     order_form = OrderForm()
