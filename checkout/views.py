@@ -37,12 +37,14 @@ def checkout(request):
 
     # creating the order form instance
     order_form = OrderForm()
+    if not stripe_public_key:
+        messages.warning(request, 'Stripe public key is unavailable, please set before continuing')
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
         # add stripe secret key
-        'stripe_public_key': 'pk_test_51M1CYYGLT9eFji1UAXkz1tcBoXIzozeKbxP3j2Tf31pRfj8qD2bcczgQjwfMCQEC3el0XZYIY4CBY7oaRKvaXp9w00XkO37pJh',
-        'client_secret': 'test client secret',
+        'stripe_public_key': stripe_public_key,
+        'client_secret': intent.client_secret,
     }
 
     # renders out the order form
