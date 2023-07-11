@@ -14,12 +14,31 @@ def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     #secret key
     stripe_secret_key = settings.STRIPE_SECRET_KEY
-    # get the bag from the session
-    bag = request.session.get('bag', {})
-    # if statment for logic around if bag is empty
-    if not bag:
-        messages.error(request, "Your bag is currently empty")
-        return redirect(reverse('products'))
+    # check submit method is post and submit request
+    if request.method == 'POST':
+        bag = request.session.get('bag', {})
+
+        # get form data from dictionary
+        form_data = {
+            'full_name': request.POST['full_name'],
+            'email': request.POST['email'],
+            'phone_number': request.POST['phone_number'],
+            'country': request.POST['country'],
+            'postcode': request.POST['postcode'],
+            'town_or_city': request.POST['town_or_city'],
+            'street_address1': request.POST['street_address1'],
+            'street_address2': request.POST['street_address2'],
+            'county': request.POST['county'],
+        }
+
+    # else return get request
+    else:
+        # get the bag from the session
+        bag = request.session.get('bag', {})
+        # if statment for logic around if bag is empty
+        if not bag:
+            messages.error(request, "Your bag is currently empty")
+            return redirect(reverse('products'))
 
     # create new variable for stripe payments so the old one is not overridden
     current_bag = bag_contents(request)
