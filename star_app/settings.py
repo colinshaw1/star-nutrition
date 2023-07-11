@@ -26,9 +26,9 @@ SECRET_KEY = 'django-insecure-+^mc1sld#+35r&c2ep++gsnmdur8teu)qtds5=l1r(_t2mrsno
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-colinshaw1-starnutritio-rtjlq5e6u95.ws-eu101.gitpod.io']
+ALLOWED_HOSTS = ['8000-colinshaw1-starnutritio-uw1warjeuht.ws-eu101.gitpod.io']
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-colinshaw1-starnutritio-rtjlq5e6u95.ws-eu101.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://8000-colinshaw1-starnutritio-uw1warjeuht.ws-eu101.gitpod.io']
 
 # Application definition
 
@@ -82,9 +82,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                 # adding shopping bag context process, so bag contents will be aviable in alll tmeplates
-                'shoppingbag.contexts.bag_contents'
                 'django.template.context_processors.media',
+                # adding shopping bag context process, so bag contents will be available in alll tmeplates
+                'shoppingbag.contexts.bag_contents',
             ],
             # tells django what templates to use for crispy forms 
             'builtins': [
