@@ -1,7 +1,7 @@
 from django.shortcuts import render, reverse, redirect
 from django.contrib import messages
-from .forms  import OrderForm
-from bag.context import bag_contents
+from .forms import OrderForm
+from shoppingbag.contexts import bag_contents
 from django.conf import settings
 
 import stripe
@@ -9,6 +9,11 @@ import stripe
 # Create your views here.
 # checkout view
 def checkout(request):
+    # create stripe payment intent
+    # public key
+    stripe_public_key = settings.STRIPE_PUBLIC_KEY
+    #secret key
+    stripe_secret_key = settings.STRIPE_SECRET_KEY
     # get the bag from the session
     bag = request.session.get('bag', {})
     # if statment for logic around if bag is empty
@@ -22,6 +27,13 @@ def checkout(request):
     total = current_bag['grand_total']
     # round the total for stripe
     stripe_total = round(total * 100)
+    # setting secret key on stripe
+    stripe.api_key = stripe_secret_key
+    # createing the payment intent
+    intent = stripe.PaymentIntent.create(
+        amount=stripe_total,
+        currency=settings.STRIPE_CURRENCY,
+    )
 
     # creating the order form instance
     order_form = OrderForm()
