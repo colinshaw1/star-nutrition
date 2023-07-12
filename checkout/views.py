@@ -5,12 +5,12 @@ from django.conf import settings
 from .forms import OrderForm
 from .models import Order, OrderLineItem
 from products.models import Product
-from bag.contexts import bag_contents
+from shoppingbag.contexts import bag_contents
 
 import stripe
 
 # Create your views here.
-# checkout view
+# checkour view
 
 
 def checkout(request):
@@ -116,4 +116,28 @@ def checkout(request):
     }
 
     # renders out the order form
+    return render(request, template, context)
+
+# checkout success view to let user know order is complete
+def checkout_success(request, order_number):
+    """
+    Handle successful checkouts
+    """
+    # check user wants ot save session
+    save_info = request.session.get('save_info')
+    # user oder number ot create order
+    order = get_object_or_404(Order, order_number=order_number)
+    # success message and order number noted
+    messages.success(request, f'Order successfully processed! \
+        Your order number is {order_number}. A confirmation \
+        email will be sent to {order.email}.')
+    # delete users bag from the session
+    if 'bag' in request.session:
+        del request.session['bag']
+    # setting the tempalte and context
+    template = 'checkout/checkout_success.html'
+    context = {
+        'order': order,
+    }
+    # return the template
     return render(request, template, context)
