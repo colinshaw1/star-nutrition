@@ -26,9 +26,9 @@ SECRET_KEY = 'django-insecure-+^mc1sld#+35r&c2ep++gsnmdur8teu)qtds5=l1r(_t2mrsno
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-colinshaw1-starnutritio-uw1warjeuht.ws-eu101.gitpod.io']
+ALLOWED_HOSTS = ['8000-colinshaw1-starnutritio-m7t994sdh9k.ws-eu101.gitpod.io']
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-colinshaw1-starnutritio-uw1warjeuht.ws-eu101.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://8000-colinshaw1-starnutritio-m7t994sdh9k.ws-eu101.gitpod.io']
 
 # Application definition
 
@@ -192,6 +192,6 @@ STANDARD_DELIVERY_PERCENTAGE = 10
 # sets curencey to euro
 STRIPE_CURRENCY = 'eur'
 # setting stripe public key
-STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
+STRIPE_PUBLIC_KEY = 'pk_test_51M1CYYGLT9eFji1UAXkz1tcBoXIzozeKbxP3j2Tf31pRfj8qD2bcczgQjwfMCQEC3el0XZYIY4CBY7oaRKvaXp9w00XkO37pJh'
 # setting the secret stripe key
-STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
+STRIPE_SECRET_KEY = 'sk_test_51M1CYYGLT9eFji1UeECWxevGBPqJJpk9Dt03uFRAmCpWnCTMmG0HeLxy3hftuYUpvsqplwO9Uh4CQOweDH2j0aU600NXLqZ0FJ'
