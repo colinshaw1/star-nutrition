@@ -10,9 +10,7 @@ from shoppingbag.contexts import bag_contents
 import stripe
 
 # Create your views here.
-# checkour view
-
-
+# checkout view
 def checkout(request):
     # create stripe payment intent
     # public key
