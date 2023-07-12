@@ -14,7 +14,7 @@ def update_on_save(sender, instance, created, **kwargs):
 # exectues the update_on_save method
 @receiver(post_delete, sender=OrderLineItem)
 # fucniton to handle signals from post save event
-def update_on_save(sender, instance, **kwargs):
+def update_on_delete(sender, instance, **kwargs):
     """
     Update order total on lineitem delete
     """
