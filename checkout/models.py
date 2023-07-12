@@ -81,7 +81,7 @@ class OrderLineItem(models.Model):
         and update order.
         """                
         # multiplies the product by the price for each line item
-        self.lineitem_total = self.product.price * self.quanity
+        self.lineitem_total = self.product.price * self.quantity
         super().save(*args, **kwargs)
 
     # string to return sku and order number for each line item
