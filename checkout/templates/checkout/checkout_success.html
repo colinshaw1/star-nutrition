@@ -42,8 +42,10 @@
                 <!-- section for order number -->
                 <div class="row">
                     <div class="col-12 col-md-4">
-                        <p class="mb-0 text-black font-weight-bold">Order Number</p>
+                        <!-- add order number text -->
+                        <p class="mb-0 text-black font-weight-bold">Order Number:</p>
                     </div>
+                    <!-- add order number itself  -->
                     <div class="col-12 col-md-8 text-md-right">
                         <p class="mb-0">{{ order.order_number }}</p>
                     </div>
@@ -51,9 +53,11 @@
                 <!-- section for order date-->
                 <div class="row">
                     <div class="col-12 col-md-4">
-                        <p class="mb-0 text-black font-weight-bold">Order Date</p>
+                        <!-- order date text -->
+                        <p class="mb-0 text-black font-weight-bold">Order Date:</p>
                     </div>
                     <div class="col-12 col-md-8 text-md-right">
+                        <!-- actual order date -->
                         <p class="mb-0">{{ order.date }}</p>
                     </div>
                 </div>
@@ -63,6 +67,21 @@
                         <small class="text-muted">Order Details:</small>
                     </div>
                 </div>
+                <!-- django logic for loop for getting line items -->
+                {% for item in order.lineitems.all %}
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <p class="small mb-0 text-black font-weight-bold">
+                            <!-- generate the name, size and price -->
+                            {{ item.product.name }}{% if item.product_size %} - Size {{ item.product.size|upper }}{% endif %}
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-8 text-md-right">
+                        <!-- generate the item quanity and price  -->
+                        <p class="small mb-0">{{ item.quantity }} @ ${{ item.product.price }} each</p>
+                    </div>
+                </div>
+                {% endfor %}
             </div>
             {% endblock %}
             <!-- javascript to render stripe -->
