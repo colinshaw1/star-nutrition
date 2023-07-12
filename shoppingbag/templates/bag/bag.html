@@ -114,7 +114,6 @@
                     </tr>
                     {% endfor %}
                     <tr>
-                        <!-- content taking from project walkthrough in course content -->
                         <td colspan="5" class="pt-5 text-right">
                             <!-- return bag total -->
                             <h6><strong>Bag Total: €{{ total|floatformat:2 }}</strong></h6>
@@ -170,7 +169,7 @@
 {% block postloadjs %}
 {{ block.super }}
 
-<!-- javascript add from course content for remove and add buttons -->
+<!-- javascript to remove and add buttons -->
 <script type="text/javascript">
     // Update quantity on click
     $('.update-link').click(function (e) {
