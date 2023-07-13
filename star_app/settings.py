@@ -192,6 +192,8 @@ STANDARD_DELIVERY_PERCENTAGE = 10
 # sets curencey to euro
 STRIPE_CURRENCY = 'eur'
 # setting stripe public key
-STRIPE_PUBLIC_KEY = 'pk_test_51M1CYYGLT9eFji1UAXkz1tcBoXIzozeKbxP3j2Tf31pRfj8qD2bcczgQjwfMCQEC3el0XZYIY4CBY7oaRKvaXp9w00XkO37pJh'
+STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 # setting the secret stripe key
-STRIPE_SECRET_KEY = 'sk_test_51M1CYYGLT9eFji1UeECWxevGBPqJJpk9Dt03uFRAmCpWnCTMmG0HeLxy3hftuYUpvsqplwO9Uh4CQOweDH2j0aU600NXLqZ0FJ'
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
+# setting stripe webhook secret key
+STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
