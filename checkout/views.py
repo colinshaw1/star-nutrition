@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
 
@@ -10,6 +11,30 @@ from shoppingbag.contexts import bag_contents
 import stripe
 
 # Create your views here.
+# view for caching the meta data from billing and shipping info
+@require_POST
+# uses the POST method
+def cache_checkout_data(request):
+    try:
+        pid = request.POST.get('client_secret').split('_secret')[0]
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+        # calls stripe payment intent and what to modify
+        stripe.PaymentIntent.modify(pid, metadata={
+            # use json dump of shopping bag
+            'bag': json.dumps(request.session.get('bag', {})),
+            # if the info needs to be saved
+            'save_info': request.POST.get('save_info'),
+            # user who is placing order
+            'username': request.user,
+        })
+        # return 200 response if runs okay
+        return HttpResponse(status=200)
+    # if there is an error return this message
+    except Exception as e:
+        messages.error(request, 'Sorry, your payment cannot be \
+            processed right now. Please try again later.')
+        return HttpResponse(content=e, status=400)
+
 # checkout view
 def checkout(request):
     # create stripe payment intent
