@@ -58,6 +58,20 @@ form.addEventListener('submit', function(ev) {
     // js to run the overlay when processing the payment
     $('#payment-form').fadeToggle(100);
     $('#loading-overlay').fadeToggle(100);
+    // boolean value of the check info box
+    var saveInfo = Boolean($('#id-save-info').attr('checked'));
+    // From using {% csrf_token %} in the form
+    var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
+    // create object to pass object to the view
+    var postData = {
+        'csrfmiddlewaretoken': csrfToken,
+        'client_secret': clientSecret,
+        'save_info': saveInfo,
+    };
+    // variable for the new url
+    var url = '/checkout/cache_checkout_data/'
+    // post data data to the url
+    $.post(url, postData).done(function () {
     // billing details by calling to stripe
     stripe.confirmCardPayment(clientSecret, {
         payment_method: {
@@ -110,4 +124,8 @@ form.addEventListener('submit', function(ev) {
             }
         }
     });
+}).fail(function () {
+    // just reload the page, the error will be in django messages
+    location.reload();
+})
 });
