@@ -39,6 +39,17 @@
     color: #000;
     border: 1px solid #000;
 }
+/* styling for country fields */
+select,
+select option {
+    color: #000000;
+}
+
+select:invalid,
+select option[value=""] {
+    color: #aab7c4 !important;
+}
+
 /* over lay css for checkout  */
 #loading-overlay {
 	display: none;
