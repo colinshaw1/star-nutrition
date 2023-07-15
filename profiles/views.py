@@ -1,14 +1,29 @@
 from django.shortcuts import render, get_object_or_404
-from .models import UserProfile
+from django.contrib import messages
 
+from .models import UserProfile
+from .forms import UserProfileForm
 # Create your views here.
 # create profile view returns html template
 def profile(request):
     """ Display the user's profile. """
-
     profile = get_object_or_404(UserProfile, user=request.user)
-    
+
+    if request.method == 'POST':
+        form = UserProfileForm(request.POST, instance=profile)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Profile updated successfully')
+    # populate user profile info
+    form = UserProfileForm(instance=profile)
+    # render order history
+    orders = profile.orders.all()
+    # link to profiles template url
     template = 'profiles/profile.html'
-    context = {}
+    context = {
+        'form': form,
+        'orders': orders,
+        'on_profile_page': True
+    }
 
     return render(request, template, context)
