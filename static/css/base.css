@@ -96,6 +96,10 @@ a.category-badge > span.badge:hover {
 .remove-item {
     cursor: pointer;
 }
+/* ---- Input placholder sytling*/
+input[name='q']::placeholder {
+    color: #aab7c4;
+}
 
 /* ------------------------------- bootstrap toasts */
 
