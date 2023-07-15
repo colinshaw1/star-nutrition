@@ -17,5 +17,7 @@ urlpatterns = [
     path('shoppingbag/', include('shoppingbag.urls')),
     # adding checkout urls to project level file
     path('checkout/', include('checkout.urls')),
+    # adding profile urls to project level file
+    path('profiles/', include('profiles.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 #using static function to add url to media urls
