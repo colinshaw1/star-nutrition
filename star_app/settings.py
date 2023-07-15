@@ -26,9 +26,9 @@ SECRET_KEY = 'django-insecure-+^mc1sld#+35r&c2ep++gsnmdur8teu)qtds5=l1r(_t2mrsno
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-colinshaw1-starnutritio-1bdmmebkl87.ws-eu101.gitpod.io']
+ALLOWED_HOSTS = ['8000-colinshaw1-starnutritio-jykn84nvxe7.ws-eu101.gitpod.io']
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-colinshaw1-starnutritio-1bdmmebkl87.ws-eu101.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://8000-colinshaw1-starnutritio-jykn84nvxe7.ws-eu101.gitpod.io']
 
 # Application definition
 
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'products',
     'shoppingbag',
     'checkout',
+    'profiles',
     # adds allauth to installed apps
     'allauth',
     'allauth.account',
