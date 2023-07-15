@@ -2,7 +2,7 @@ from django import forms
 from .models import UserProfile
 
 # class for the profiles form
-class UserProfile(forms.ModelForm):
+class UserProfileForm(forms.ModelForm):
     class Meta:
         # tells danjo which model is assoicated ot the form
         model = UserProfile
