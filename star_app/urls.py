@@ -8,7 +8,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     # # adding alluath urls to project level file
-    # path('accounts', include('allauth.urls')),
+    path('accounts', include('allauth.urls')),
     #adding homepage urls to project level file
     path('', include('homepage.urls')),
     # adding products urls to project level file
