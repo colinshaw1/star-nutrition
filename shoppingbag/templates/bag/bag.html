@@ -59,7 +59,7 @@
                         <!-- row for product price -->
                         <td class="py-3">
                             <!-- loads the price argument as the first argument for register filter and quantity as the second -->
-                            <p class="my-0">{{ item.product.price | calc_subtotal:item.quantity }}</p>
+                            <p class="my-0">{{ item.product.price }}</p>
                         </td>
                         <!-- row for product Quantity -->
                         <td class="py-3 w-25">
@@ -96,19 +96,20 @@
                                         <!-- size to be submitted if product has size -->
                                         {% if item.product.has_sizes %}
                                         <input type="hidden" name="product_size" value="{{ item.size }}">
-                                    {% endif %}
+                                        {% endif %}
                                     </div>
                                 </div>
                             </form>
-                            <!-- remove items from the bag -->
-                            <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"
-                                data-product_size="{{ item.size }}"><small>Remove</small></a>
                             <!-- update items in the bag -->
                             <a class="update-link text-info">Update</a>
+                            <!-- remove items from the bag -->
+                            <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}">
+                                <small>Remove</small></a>
+                            
                         </td>
                         <!-- row for prouct price -->
-                        <td class="p-3">
-                            <p class="my-0"><strong>{{ item.product.price}}</strong></p>
+                        <td class="py-3">
+                            <p class="my-0">${{ item.product.price | calc_subtotal:item.quantity }}</p>
                         </td>
                     </tr>
                     {% endfor %}
@@ -164,31 +165,33 @@
     </div>
 </div>
 
-{% endblock %}
+{{% endblock %}
 {% block postloadjs %}
 {{ block.super }}
-{% include 'products/includes/quantity_script.html' %}
 
 <!-- javascript remove and add buttons -->
 <script type="text/javascript">
     // Update quantity on click
-    $('.update-link').click(function(e) {
+    $('.update-link').click(function (e) {
         var form = $(this).prev('.update-form');
         form.submit();
     })
 
     // Remove item and reload on click
-    $('.remove-item').click(function(e) {
+    $('.remove-item').click(function (e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
         var size = $(this).data('product_size');
         var url = `/shoppingbag/remove/${itemId}/`;
-        var data = {'csrfmiddlewaretoken': csrfToken, 'product_size': size};
+        var data = {
+            'csrfmiddlewaretoken': csrfToken,
+            'product_size': size
+        };
 
         $.post(url, data)
-         .done(function() {
-             location.reload();
-         });
+            .done(function () {
+                location.reload();
+            });
     })
 </script>
 {% endblock %}
