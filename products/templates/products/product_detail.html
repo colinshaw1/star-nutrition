@@ -135,5 +135,5 @@
 
 {% block postloadjs %}
 {{ block.super }}
-{% include 'products/includes/plusminus_script.html' %}
+<script src="{% static 'products/js/plusminus_script.js' %}"></script>
 {% endblock %}
