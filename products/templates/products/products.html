@@ -33,7 +33,7 @@
                     <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
                         <div class="sort-select-wrapper w-50">
                             <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
-                                <!-- sorting methods depening on selected method -->
+                                <!-- sorting methods depening on selected metho -->
                                 <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
                                 <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
                                 <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
@@ -46,7 +46,6 @@
                             </select>
                         </div>
                 </div>
-                
                 <!-- sort results to show count of results -->
                 <div class="col-12 col-md-6 order-md-first">
                     <p class="text-muted mt-3 text-center text-md-left">
@@ -108,7 +107,7 @@
                                 </div>
                             </div>
                         </div>
-                       <!-- horizontal rule to divide the products on all page sizes -->
+                        <!-- horizontal rule to divide the products on all page sizes -->
                         <!-- if statment for divisible by 1 then render this column -->
                         {% if forloop.counter|divisibleby:1 %}
                             <!-- small to medium screens -->
@@ -151,7 +150,7 @@
 
 {% block postloadjs %}
     <!-- javascript added to use sort methods and back to top button-->
-    block.super amends to the block instead of replacing
+    <!-- block.super amends to the block instead of replacing -->
     {{ block.super }}
     <!-- adding back to top button to products page -->
     <script type="text/javascript">
@@ -167,7 +166,7 @@
             var selector = $(this);
             var currentUrl = new URL(window.location);
 
-            var selectedVal = selector.val()
+            var selectedVal = selector.val();
             // resets sorting to default
             if(selectedVal != "reset"){
                 // if not sorted and directions gets split at underscore by sorting or direction
@@ -181,7 +180,6 @@
                 // replace current location to the updated url and relaod page
                 window.location.replace(currentUrl);
             } else {
-
                 currentUrl.searchParams.delete("sort");
                 currentUrl.searchParams.delete("direction");
 
