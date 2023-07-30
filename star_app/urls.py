@@ -8,7 +8,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     # # adding alluath urls to project level file
-    path('accounts', include('allauth.urls')),
+    path('accounts/', include('allauth.urls')),
     #adding homepage urls to project level file
     path('', include('homepage.urls')),
     # adding products urls to project level file
@@ -18,6 +18,6 @@ urlpatterns = [
     # adding checkout urls to project level file
     path('checkout/', include('checkout.urls')),
     # adding profile urls to project level file
-    path('profiles/', include('profiles.urls')),
+    path('profile/', include('profiles.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 #using static function to add url to media urls
