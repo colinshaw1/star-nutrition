@@ -25,6 +25,8 @@ class UserProfile(models.Model):
     # return username string
     def __str__(self):
         return self.user.username
+
+# receiver to save user profiles details to file
 # receiver to save user profiles details to file
 @receiver(post_save, sender=User)
 def create_or_update_user_profile(sender, instance, created, **kwargs):
