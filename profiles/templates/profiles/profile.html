@@ -95,9 +95,6 @@
     {{ client_secret|json_script:"id_client_secret" }}
     <!-- link to js file for the template -->
     <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
-{% endblock %}
-{% block postloadjs %}
-    {{ block.super }}
     <!-- link to js file in static folder -->
     <script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
 {% endblock %}
