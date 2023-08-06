@@ -34,14 +34,13 @@
                 Sports Nutrition
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="online-link">
-                <a href="{% url 'products' %}?category=protein_powders" class="dropdown-item">Protien Powders</a>
+                <a href="{% url 'products' %}?category=protien_powders" class="dropdown-item">Protien Powders</a>
                 <a href="{% url 'products' %}?category=bars_drinks_snacks" class="dropdown-item">Bars, Drinks, Snacks</a>
                 <a href="{% url 'products' %}?category=creatine" class="dropdown-item">Creatine</a>
                 <a href="{% url 'products' %}?category=electrolytes" class="dropdown-item">Electrolytes</a>
                 <a href="{% url 'products' %}?category=energy_gels" class="dropdown-item">Energy Gels</a>
                 <a href="{% url 'products' %}?category=amino_acids" class="dropdown-item">Amino Acids</a>
-                <a href="{% url 'products' %}?category=sports_accessories" class="dropdown-item">Sports Accessories</a>
-                <a href="{% url 'products' %}category=protein_powders,bars_drinks_snacks,creatine,electrolytes,energy_gels,amino_acids,sports_accessories" class="dropdown-item">All Sport Nutrition Products</a>
+                <a href="{% url 'products' %}category=protien_powders,bars_drinks_snacks,creatine,electrolytes,energy_gels,amino_acids,sports_accessories" class="dropdown-item">All Sport Nutrition Products</a>
             </div>
         </li>
         <!--Weight management dropdown for links for user to access all Weight management products-->
@@ -52,7 +51,6 @@
             <div class="dropdown-menu border-0" aria-labelledby="clearance-link">
                 <a href="{% url 'products' %}?category=fat_burner" class="dropdown-item">Fat Burners</a>
                 <a href="{% url 'products' %}?category=weight_management" class="dropdown-item">Weight Management</a>
-                <a href="{% url 'products' %}?category=foods_drinks" class="dropdown-item">Diet Drinks and Foods</a>
                 <a href="{% url 'products' %}?category=fat_burner,weight_management,foods_drinks" class="dropdown-item">All Weight Management products</a>
             </div>
         </li>

@@ -198,13 +198,234 @@
         "pk": 16,
         "model": "products.product",
         "fields": {
-            "sku": "p000000015",
+            "sku": "p000000016",
             "name": "Impact Protein Bar Variety Pack",
             "description": "Winner of the 'Best Protein Bar' in the European Specialist Sports Nutrition Awards 2022. Impact Protein Bars are the ultimate high-protein snack — with their triple layers and topped with crunchy crispies — theyre a super-nutritious treat for sweet-tooth snackers everywhere. So, discover a world of flavour with Impact Protein Bar Variety Pack — you’re guaranteed to find your favourite. ",
             "price": 22.99,
             "category": 5,
             "rating": 4.4,
             "image": "impact.jpg"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "products.product",
+        "fields": {
+            "sku": "p000000017",
+            "name": "IronMaxx Creatine Flavoured Zero - 500 g",
+            "description": "Flavored Creatine Monohydrate With 4500 mg creatine monohydrate per serving Sugar Free- Sweetened with Stevia and Sucralose Without artificial additives.Endure high loads longer. The body can only sustain intense stress for a short period of time, since the adenosine triphosphate (ATP) required for energy production is only available in small amounts in the body. Creatine, an endogenous substance formed from three amino acids, can support ATP production so that very high loads can be sustained for longer.",
+            "price": 24.99,
+            "category": 6,
+            "rating": 3.8,
+            "image": "creatinezero.jpg"
+        }
+    },
+    {
+        "pk": 18,
+        "model": "products.product",
+        "fields": {
+            "sku": "p000000018",
+            "name": "Muscle Feast Creapure Creatine Monohydrate Powder",
+            "description": "Premium Pre-Workout Or Post-Workout | Easy To Mix, Gluten-Free, Safe And Pure, Kosher Certified (300G, Unflavored,'55 Servings (Pack of 1)",
+            "price": 33.40,
+            "category": 6,
+            "rating": 4.7,
+            "image": "musclefeast.jpg"
+        }
+    },
+    {
+        "pk": 19,
+        "model": "products.product",
+        "fields": {
+            "sku": "p000000019",
+            "name": "Transcend Creatine",
+            "description": "Time under tension. Deadlifts. A beastly training partner. There are a handful of fool-proof ways to get stronger, and at the top of that list is creatine. Studies show that creatine boosts training gains by an average of 5 to 10 percent. Aspire higher with Transcend, a pure, German-made Earth Fed Essential. Transcend your training with the best creatine out there!",
+            "price": 28.99,
+            "category": 6,
+            "rating": 4.8,
+            "image": "transcend.jpg"
+        }
+    },
+    {
+        "pk": 20,
+        "model": "products.product",
+        "fields": {
+            "sku": "p000000020",
+            "name": "CREATINE MONOHYDRATE - 83 SERVINGS, 250 GRAMS + Free White Shaker 500ml",
+            "description": "Creatine assists in supplying energy to muscles and improving strength. Contains 3 g creatine with 0 fillers. Improves endurance in athletes and sports enthusiasts. Easily soluble in water and is designed for quick absorption by the body",
+            "price": 23.99,
+            "category": 6,
+            "rating": 4.7,
+            "image": "scitron.jpg"
+        }
+    },
+    {
+        "pk": 21,
+        "model": "products.product",
+        "fields": {
+            "sku": "p000000021",
+            "name": "ELECTROLYTES by SPONSER",
+            "description": "ELECTROLYTES by SPONSER® is a refreshing, calorie-reduced electrolyte drink for sports and leisure! If training in the range of basic endurance or fat metabolism is performed, or also in the case of a calorie-conscious diet, an adapted, low carbohydrate supply is advantageous.",
+            "price": 5.50,
+            "category": 7,
+            "rating": 4.7,
+            "image": "electro.jpg"
+        }
+    },
+    {
+        "pk": 22,
+        "model": "products.product",
+        "fields": {
+            "sku": "p000000022",
+            "name": "Wellcore - Electrolytes (200g, 40 servings)",
+            "description": "Electrolyte Drink With 5 Vital Electrolytes: Na, Mg, Ca, K, PO4 | Sugar Free Electrolyte Powder | Fat Fuel Powered | Keto",
+            "price": 15.99,
+            "category": 7,
+            "rating": 4.9,
+            "image": "electrodrink.jpg"
+        }
+    },
+    {
+        "pk": 23,
+        "model": "products.product",
+        "fields": {
+            "sku": "p000000023",
+            "name": "SiS Go Electrolyte 500g",
+            "description": "HIGH PROTEIN & LOW SUGAR BARS: Each 55g bar contains 20g of protein and only 192 calories. Great for a tasty treat or a post workout refuel. Our Chocolate Caramel Flavour has a delicious milk chocolate coating, creamy caramel layer and chewy crispy centre.",
+            "price": 13.29,
+            "category": 7,
+            "rating": 4.2,
+            "image": "sis.jpg"
+        }
+    },
+    {
+        "pk": 24,
+        "model": "products.product",
+        "fields": {
+            "sku": "p000000024",
+            "name": "SiS GO Energy + Caffeine Gel Berry 60ml",
+            "description": "Berry flavoured carbohydrate gel with caffeine and added sweetener. Our award winning gel technology delivers fast energy with a caffeine boost that’s easy to take. SiS GO + Caffeine is clean in the mouth and easy to digest. Each drink is 60ml.",
+            "price": 2.00,
+            "category": 8,
+            "rating": 4.8,
+            "image": "sisgel.jpg"
+        }
+    },
+    {
+        "pk": 25,
+        "model": "products.product",
+        "fields": {
+            "sku": "p000000025",
+            "name": "SiS GO Energy + Caffeine Gel Lemon 60ml",
+            "description": "Lemon flavoured carbohydrate gel with caffeine and added sweetener. Our award winning gel technology delivers fast energy with a caffeine boost that’s easy to take. SiS GO + Caffeine is clean in the mouth and easy to digest. Each drink is 60ml.",
+            "price": 2.00,
+            "category": 8,
+            "rating": 4.3,
+            "image": "sisgel_lemon.jpg"
+        }
+    },
+    {
+        "pk": 26,
+        "model": "products.product",
+        "fields": {
+            "sku": "p000000025",
+            "name": "High5 Energy Gels Caffeine - 20 X 40g Gels",
+            "description": "High5 Energy Gel Caffeine is smooth with a light consistency, making it easy to have on the go. And, because it’s made with natural fruit juice, it tastes great too! Easy to open and swallow, each sachet delivers 23g of carbohydrate energy and 30mg caffeine.",
+            "price": 16.99,
+            "category": 8,
+            "rating": 4.9,
+            "image": "hi5.jpg"
+        }
+    },
+    {
+        "pk": 27,
+        "model": "products.product",
+        "fields": {
+            "sku": "p000000027",
+            "name": "Optimum Nutrition Amino Energy Fruit Fusion 270g",
+            "description": "Optimum Nutrition's Essential Amino Energy Fruit Fusion Powder combines an optimal ratio of rapidly absorbed free form amino acids (including BCAAs and arginine), as well as beta alanine and N.O.- boosting ingredients to help you reach your next level. At just 29 calories per serving, Optimum Nutrition Amino Energy makes a big impression without denting your diet. Amino Energy supports recovery before, during & after exercise, and has caffeine from natural sources.",
+            "price": 19.99,
+            "category": 9,
+            "rating": 4.7,
+            "image": "onamino.jpg"
+        }
+    },
+    {
+        "pk": 28,
+        "model": "products.product",
+        "fields": {
+            "sku": "p000000028",
+            "name": "NOW Foods, Sports, Branched-Chain Amino Acid Powder, 12 oz (340 g)",
+            "description": "The Branched-Chain Amino Acids (BCAAs), leucine, isoleucine and valine are essential amino acids, and thus cannot be made in the body.* BCAAs are critical for muscle protein synthesis, and because BCAAs can be used as fuel during intense exercise, BCAA supplementation can help to preserve existing muscle tissue. In addition, BCAAs can support the recovery process by promoting the normal repair processes that take place after exertion. BCAAS also play an important role in the maintenance of proper immune system function and the support of healthy aging. This powder is instantized with sunflower lecithin for easy mixing.",
+            "price": 28.50,
+            "category": 9,
+            "rating": 4.7,
+            "image": "branched.jpg"
+        }
+    },
+    {
+        "pk": 29,
+        "model": "products.product",
+        "fields": {
+            "sku": "p000000029",
+            "name": "Applied Nutrition Amino Fuel EAA Powder Fruit Burst 390g",
+            "description": "Amino Fuel is the perfect blend delivering 11g of Aminos per serving, 9g of which are Essential Amino Acids (EAA) including 6g of Branched Chain Amino Acids (BCAAs) at a 2:1:1 ratio (3000mg L-Leucine, 1500mg L-Isoleucine, 1500mg L-Valine) with an additional 2g of L-Glutamine.",
+            "price": 32.29,
+            "category": 9,
+            "rating": 4.6,
+            "image": "applied.jpg"
+        }
+    },
+    {
+        "pk": 30,
+        "model": "products.product",
+        "fields": {
+            "sku": "p000000030",
+            "name": "Trec Thermo Fat Burner Max 60 caps",
+            "description": "Trec Thermo Fat Burner is a special combination of substances increasing the reduction of the fatty tissue and facilitating the control of body weight. The product contains standardised vegetable extracts which are rich in bioactive agents. Guarana, Green Coffee, White and Green Tea Extracts increase the speed of metabolism and thus aid slimming and strengthen the organism under a huge physical and psychological strain. Thermo Fat Burner has been additionally supplemented with L-Carnitine and Chromium, ingredients which suppress the appetite and increase the transport of fat particles to their final burning location.",
+            "price": 15.29,
+            "category": 11,
+            "rating": 4.4,
+            "image": "trec.jpg"
+        }
+    },
+    {
+        "pk": 31,
+        "model": "products.product",
+        "fields": {
+            "sku": "p000000031",
+            "name": "Gaspari Nutrition DTN8 - Explosive Fat Burner - 60 Caps",
+            "description": "DTN8 – Explosive Fat Burner is the fat destroyer you’ve been waiting for. The Fat Burner from Gaspari Nutrition not only incinerates body fat, but also provides you with explosive energy, help you with mental focus and keep your cortisol levels in check.",
+            "price": 34.99,
+            "category": 11,
+            "rating": 4.6,
+            "image": "dt8n.jpg"
+        }
+    },
+    {
+        "pk": 32,
+        "model": "products.product",
+        "fields": {
+            "sku": "p000000032",
+            "name": "7-KETO® 100 mg Veg Capsules",
+            "description": "7-Keto-DHEA is a naturally occurring metabolite of Dehydroepiandrosterone (DHEA).* 7-Keto-DHEA is involved in many biological functions including cellular production of heat (thermogenesis).* DHEA production and 7-Keto-DHEA, as well as metabolic rate, are known to naturally decrease with age.* In clinical studies, 7-KETO®, a unique ingredient, has been shown to assist in the maintenance of a healthy body weight along with a proper diet and exercise regimen.*",
+            "price": 39.99,
+            "category": 12,
+            "rating": 4.6,
+            "image": "keto.jpg"
+        }
+    },
+    {
+        "pk": 33,
+        "model": "products.product",
+        "fields": {
+            "sku": "p000000033",
+            "name": "Thermo Weight Control 60 vegetarian capsules",
+            "description": "You work hard and eat right to maintain your weight, but is it enough to keep your fires lit? Promote healthy fat burning with Thermo Weight Control—a specially formulated supplement made with red chili extract.",
+            "price": 29.99,
+            "category": 12,
+            "rating": 4.6,
+            "image": "thermo.jpg"
         }
     }
 ]
