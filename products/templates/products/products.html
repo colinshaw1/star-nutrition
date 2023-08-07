@@ -16,7 +16,7 @@
         <!-- row for products -->
         <div class="row">
             <div class="col text-center mt-3">
-                <h2 class="logo-font text-black">Products</h2>
+                <h2 class="logo-font text-white">Products</h2>
                 <!-- bootstrap template to render category links -->
                 {% for c in current_categories %}
                     <a class="category-badge text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
@@ -48,10 +48,10 @@
                 </div>
                 <!-- sort results to show count of results -->
                 <div class="col-12 col-md-6 order-md-first">
-                    <p class="text-muted mt-3 text-center text-md-left">
+                    <p class="text-black mt-3 text-center text-md-left">
                         <!-- django template logic -->
                         {% if search_term or current_categories or current_sorting != 'None_None' %}
-                            <span class="small"><a href="{% url 'products' %}">Products Home</a> | </span>
+                            <span class="text-black"><a href="{% url 'products' %}"><strong>Products Home</strong></a> | </span>
                         {% endif %}
                         {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
                     </p>
